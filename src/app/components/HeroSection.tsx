@@ -61,7 +61,9 @@ export function HeroSection() {
       {/* Header Content */}
       <div className="flex flex-col items-center w-full gap-6 md:gap-10">
         <h1 className={`font-['IvyOra_Text'] font-medium text-5xl md:text-7xl lg:text-[110px] leading-[0.95] tracking-[-0.04em] text-center pointer-events-auto max-w-[1200px] mx-auto px-4 ${isLightMode ? 'text-[#0b0f14]' : 'text-[#f5f7fa]'}`}>
-          test
+          The Operating System for<br />
+          High-Performance<br />
+          Sales Teams
         </h1>
         
         {/* Brands Partnerships Section */}
