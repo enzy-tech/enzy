@@ -61,13 +61,13 @@ export function HeroSection() {
       {/* Header Content */}
       <div className="flex flex-col items-center w-full gap-6 md:gap-10">
         <h1 className={`font-['IvyOra_Text'] font-medium text-5xl md:text-7xl lg:text-[110px] leading-[0.95] tracking-[-0.04em] text-center pointer-events-auto max-w-[1200px] mx-auto px-4 ${isLightMode ? 'text-[#0b0f14]' : 'text-[#f5f7fa]'}`}>
-          dev2
+          dev3
         </h1>
         
         {/* Brands Partnerships Section */}
         <div className="w-full mt-2 mb-4 md:mt-4 md:mb-8 z-20 flex flex-col items-center pointer-events-auto">
           <p className={`font-['Inter'] mb-6 md:mb-10 uppercase tracking-widest text-center ${isLightMode ? 'text-black/100' : 'text-white/50'} text-[20px]`}>
-            Enzy is a real-time performance system that helps sales teams operate, compete, and win every day.
+            dev3 is a real-time performance system that helps sales teams operate, compete, and win every day.
           </p>
           
           <div className="flex flex-col gap-5 md:gap-8 w-full max-w-[100vw] overflow-visible relative pt-4 pb-6 md:pt-12 md:pb-16" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
@@ -120,7 +120,7 @@ export function HeroSection() {
           <div className="flex items-center w-full p-2 pl-4 md:pl-6">
             <input 
               type="url" 
-              placeholder="Enter your url to see what enzy could look like for you..."
+              placeholder="Enter your url to see what dev3 could look like for you..."
               className={`flex-1 bg-transparent font-['Roboto_Mono'] text-[10px] md:text-sm uppercase tracking-tight outline-none w-full truncate ${isLightMode ? 'text-[#0b0f14] placeholder:text-black/40' : 'text-[#f5f7fa] placeholder:text-white/40'}`}
               readOnly
             />
