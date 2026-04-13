@@ -1,9 +1,9 @@
+ "use client";
+
 import React from "react";
-import { useLocation } from "react-router";
 import { useTheme } from "./ThemeProvider";
 
 export function Footer() {
-  const location = useLocation();
   const { isLightMode } = useTheme();
 
   return (

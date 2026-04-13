@@ -1,3 +1,5 @@
+ "use client";
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -7,8 +9,8 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useTheme } from "./ThemeProvider";
 
 const SCREEN_IMAGES = [
-  imgInnerScreen,
-  userScreen,
+  imgInnerScreen.src,
+  userScreen.src,
   "https://images.unsplash.com/photo-1720962158883-b0f2021fb51e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwdGVjaCUyMGRhc2hib2FyZCUyMFVJfGVufDF8fHx8MTc3NTU4OTg5OHww&ixlib=rb-4.1.0&q=80&w=1080",
   "https://images.unsplash.com/photo-1770012977129-19f856a1f935?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwYW5hbHl0aWNzJTIwVUl8ZW58MXx8fHwxNzc1NTg5OTAzfDA&ixlib=rb-4.1.0&q=80&w=1080"
 ];

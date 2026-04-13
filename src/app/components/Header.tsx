@@ -1,12 +1,13 @@
+ "use client";
+
 import React, { useState, useEffect } from 'react';
 import { MainNavigation } from "./MainNavigation";
-import { Link, useLocation } from "react-router";
+import Link from "next/link";
 import { useTheme } from "./ThemeProvider";
 import { Sun, Moon } from "lucide-react";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
   const { isLightMode, toggleTheme } = useTheme();
 
   useEffect(() => {
@@ -30,7 +31,7 @@ export function Header() {
       }`}
     >
       <div className="relative flex items-center justify-between w-full px-4 max-w-7xl mx-auto">
-        <Link to="/" className="z-50 relative transition-transform duration-300 hover:scale-105">
+        <Link href="/" className="z-50 relative transition-transform duration-300 hover:scale-105">
           <img 
             src="https://39823762.fs1.hubspotusercontent-na2.net/hubfs/39823762/Enzy.co/Enzy_Logo_2026_Wordmark.svg" 
             alt="Enzy Logo" 
@@ -50,7 +51,7 @@ export function Header() {
             {isLightMode ? <Moon size={18} /> : <Sun size={18} />}
           </button>
 
-          <Link to="/about" className="relative flex items-center justify-center px-6 py-3 rounded-[13px] border-[0.8px] border-[rgba(255,255,255,0.9)] backdrop-blur-[4px] bg-[linear-gradient(189.6deg,rgba(25,173,125,0.85)_25.1%,rgba(20,144,103,0.85)_64.2%)] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),inset_2px_2px_5px_0px_rgba(255,255,255,0.4)] text-[#f5f7fa] font-['Inter'] font-medium text-[13px] transition-transform active:scale-95 hover:opacity-90 whitespace-nowrap w-max z-50 pointer-events-auto">
+          <Link href="/about" className="relative flex items-center justify-center px-6 py-3 rounded-[13px] border-[0.8px] border-[rgba(255,255,255,0.9)] backdrop-blur-[4px] bg-[linear-gradient(189.6deg,rgba(25,173,125,0.85)_25.1%,rgba(20,144,103,0.85)_64.2%)] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),inset_2px_2px_5px_0px_rgba(255,255,255,0.4)] text-[#f5f7fa] font-['Inter'] font-medium text-[13px] transition-transform active:scale-95 hover:opacity-90 whitespace-nowrap w-max z-50 pointer-events-auto">
             Learn more
           </Link>
         </div>

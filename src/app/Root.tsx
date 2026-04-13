@@ -1,13 +1,20 @@
+ "use client";
+
 import React, { useEffect } from "react";
-import { Outlet, useLocation } from "react-router";
+import { usePathname } from "next/navigation";
 import { PixelCanvas } from "./components/PixelCanvas";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { useTheme } from "./components/ThemeProvider";
 
-export function Root() {
-  const location = useLocation();
+export function Root({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
   const { isLightMode, setIsLightMode } = useTheme();
+
+  useEffect(() => {
+    // Keep legacy behavior: home defaults to light mode.
+    setIsLightMode(pathname === "/");
+  }, [pathname, setIsLightMode]);
 
   return (
     <div className={`relative w-full min-h-screen font-['Inter'] selection:bg-[#19ad7d] selection:text-white transition-colors duration-500 ${
@@ -29,7 +36,7 @@ export function Root() {
         <Header />
         
         <main className="w-full flex-1 flex flex-col items-center z-10 relative pt-[88px]">
-          <Outlet />
+          {children}
         </main>
         
         <Footer />

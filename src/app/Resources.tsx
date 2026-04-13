@@ -1,3 +1,5 @@
+ "use client";
+
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X, ArrowRight } from "lucide-react";
@@ -17,7 +19,7 @@ const LEARN_DATA = [
     title: "Insights",
     desc: "Perspectives on sales performance and momentum.",
     colSpan: "col-span-12",
-    bgImage: imgInsightsBg,
+    bgImage: imgInsightsBg.src,
     textColor: "text-black",
     descColor: "text-black/70",
     layoutStyle: "tile1",
@@ -28,7 +30,7 @@ const LEARN_DATA = [
     title: "Playbooks",
     desc: "Proven systems to drive behavior and results.",
     colSpan: "col-span-12 lg:col-span-7",
-    bgImage: imgPlaybooksBg,
+    bgImage: imgPlaybooksBg.src,
     textColor: "text-black",
     descColor: "text-black/70",
     layoutStyle: "tile2",
@@ -40,7 +42,7 @@ const LEARN_DATA = [
     desc: "How teams are building momentum with Enzy.",
     colSpan: "col-span-12 lg:col-span-5",
     bgImage: null,
-    bottomImage: imgStoriesBottom,
+    bottomImage: imgStoriesBottom.src,
     textColor: "text-white",
     descColor: "text-white/70",
     customBg: "bg-[#111113]", // Used a solid dark color to match Figma style
@@ -52,8 +54,8 @@ const LEARN_DATA = [
     title: "Guides",
     desc: "Deep dives into performance systems and workflows.",
     colSpan: "col-span-12 lg:col-span-6",
-    bgImage: imgGuidesBg,
-    innerImage: imgGuidesInner,
+    bgImage: imgGuidesBg.src,
+    innerImage: imgGuidesInner.src,
     textColor: "text-white",
     descColor: "text-white/80",
     layoutStyle: "tile4",
@@ -64,8 +66,8 @@ const LEARN_DATA = [
     title: "Compare",
     desc: "See how Enzy stacks up.",
     colSpan: "col-span-12 lg:col-span-6",
-    bgImage: imgCompareBg,
-    innerImage: imgCompareInner,
+    bgImage: imgCompareBg.src,
+    innerImage: imgCompareInner.src,
     textColor: "text-black",
     descColor: "text-black/70",
     layoutStyle: "tile5",
