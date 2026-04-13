@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/copy-out-to-dist.mjs",
     "start": "next start"
   },
   "dependencies": {
