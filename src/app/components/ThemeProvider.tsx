@@ -1,3 +1,5 @@
+ "use client";
+
 import React, { createContext, useContext, useState } from 'react';
 
 type ThemeContextType = {
@@ -13,12 +15,7 @@ const ThemeContext = createContext<ThemeContextType>({
 });
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [isLightMode, setIsLightMode] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return window.location.pathname === "/";
-    }
-    return false;
-  });
+  const [isLightMode, setIsLightMode] = useState(false);
 
   const toggleTheme = () => {
     setIsLightMode(prev => !prev);

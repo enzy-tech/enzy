@@ -40,7 +40,7 @@ export function HowItWorksSection() {
             </p>
           </div>
           <div className="w-full lg:w-[834px] lg:ml-auto h-[212px] bg-white/40 border-2 border-black/60 backdrop-blur-xl rounded-full overflow-hidden relative group-hover:border-black group-hover:bg-white/50 transition-colors duration-500 shadow-[inset_0_4px_24px_rgba(255,255,255,0.7)]">
-            <img src={createImg} alt="Create Dashboard" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] max-w-none opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+            <img src={createImg.src} alt="Create Dashboard" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] max-w-none opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
           </div>
         </div>
 
@@ -59,7 +59,7 @@ export function HowItWorksSection() {
             </p>
           </div>
           <div className="w-full lg:w-[834px] lg:ml-auto h-[212px] bg-white/40 border-2 border-black/60 backdrop-blur-xl rounded-full overflow-hidden relative group-hover:border-black group-hover:bg-white/50 transition-colors duration-500 shadow-[inset_0_4px_24px_rgba(255,255,255,0.7)]">
-            <img src={engageImg} alt="Engage Audience" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] max-w-none opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+            <img src={engageImg.src} alt="Engage Audience" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] max-w-none opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
           </div>
         </div>
 
@@ -78,7 +78,7 @@ export function HowItWorksSection() {
             </p>
           </div>
           <div className="w-full lg:w-[834px] lg:ml-auto h-[212px] bg-white/40 border-2 border-black/60 backdrop-blur-xl rounded-full overflow-hidden relative group-hover:border-black group-hover:bg-white/50 transition-colors duration-500 shadow-[inset_0_4px_24px_rgba(255,255,255,0.7)]">
-            <img src={analyzeImg} alt="Analyze Results" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] max-w-none opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+            <img src={analyzeImg.src} alt="Analyze Results" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] max-w-none opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
           </div>
         </div>
 

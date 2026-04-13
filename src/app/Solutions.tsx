@@ -1,7 +1,9 @@
+ "use client";
+
 import React, { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import { useLocation } from "react-router";
+import { usePathname } from "next/navigation";
 import { useTheme } from "./components/ThemeProvider";
 
 const SOLUTIONS_DATA = [
@@ -44,13 +46,13 @@ const SOLUTIONS_DATA = [
 ];
 
 export function Solutions() {
-  const location = useLocation();
+  const pathname = usePathname();
   const { isLightMode } = useTheme();
   const [activeId, setActiveId] = useState(SOLUTIONS_DATA[0].id);
 
   useEffect(() => {
-    if (location.hash) {
-      const hashId = location.hash.replace('#', '');
+    if (typeof window !== "undefined" && window.location.hash) {
+      const hashId = window.location.hash.replace('#', '');
       if (SOLUTIONS_DATA.some(s => s.id === hashId)) {
         setActiveId(hashId);
         // Slight scroll adjustment if navigating from another page to ensure they see it
@@ -62,7 +64,7 @@ export function Solutions() {
         }
       }
     }
-  }, [location.hash]);
+  }, [pathname]);
 
   const activeData = SOLUTIONS_DATA.find(s => s.id === activeId) || SOLUTIONS_DATA[0];
 

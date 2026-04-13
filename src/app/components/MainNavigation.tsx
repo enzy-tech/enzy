@@ -1,7 +1,10 @@
+ "use client";
+
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, ArrowRight, ArrowUpRight, Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const MENU_ITEMS = [
   { id: 'features', label: 'System', path: '/features' },
@@ -80,7 +83,7 @@ const LEARN_ITEMS = [
   }
 ];
 
-const dropInVariants = {
+const dropInVariants: any = {
   hidden: { opacity: 0, y: -15, scale: 0.98, filter: 'blur(10px)' },
   visible: { 
     opacity: 1, 
@@ -103,7 +106,7 @@ const dropInVariants = {
   }
 };
 
-const itemVariants = {
+const itemVariants: any = {
   hidden: { opacity: 0, x: -10 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: "easeOut" } }
 };
@@ -113,6 +116,7 @@ export function MainNavigation({ isLightMode = false }: { isLightMode?: boolean 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const pathname = usePathname();
 
   // Prevent scrolling when mobile menu is open
   useEffect(() => {
@@ -148,7 +152,7 @@ export function MainNavigation({ isLightMode = false }: { isLightMode?: boolean 
         <div className={`flex gap-8 px-4 py-3.5 font-['Inter'] text-[12px] uppercase tracking-[0.15em] font-medium relative ${isLightMode ? 'text-black' : 'text-[#f5f7fa]'}`}>
           {MENU_ITEMS.map((item) => (
             <Link 
-              to={item.path}
+              href={item.path}
               key={item.id}
               onClick={() => setActiveDropdown(null)}
               onMouseEnter={() => handleMouseEnter(item.id)}
@@ -210,7 +214,7 @@ export function MainNavigation({ isLightMode = false }: { isLightMode?: boolean 
                             See how Enzy drives performance in real time.
                         </h3>
                         <div className="mt-4">
-                            <Link to="/features" onClick={() => setActiveDropdown(null)} className="inline-flex items-center gap-2 text-[#19ad7d] text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity group">
+                            <Link href="/features" onClick={() => setActiveDropdown(null)} className="inline-flex items-center gap-2 text-[#19ad7d] text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity group">
                                 Explore the System <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                             </Link>
                         </div>
@@ -233,7 +237,7 @@ export function MainNavigation({ isLightMode = false }: { isLightMode?: boolean 
                                     {section.items.map((item, j) => (
                                         <li key={j}>
                                             <Link 
-                                                to={`/features#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                                                href={`/features#${item.toLowerCase().replace(/\s+/g, '-')}`}
                                                 onClick={() => setActiveDropdown(null)}
                                                 className={`group flex items-center justify-between px-3 py-2 -ml-3 rounded-lg border transition-all duration-300 ${isLightMode ? 'border-transparent hover:bg-black/5 hover:border-black/5' : 'border-transparent hover:bg-white/[0.06] hover:border-white/10'}`}
                                             >
@@ -258,7 +262,7 @@ export function MainNavigation({ isLightMode = false }: { isLightMode?: boolean 
                             Built for the field. Engineered for growth.
                         </h3>
                         <div className="mt-4">
-                            <Link to="/solutions" onClick={() => setActiveDropdown(null)} className="inline-flex items-center gap-2 text-[#19ad7d] text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity group">
+                            <Link href="/solutions" onClick={() => setActiveDropdown(null)} className="inline-flex items-center gap-2 text-[#19ad7d] text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity group">
                                 Explore Use Cases <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
                             </Link>
                         </div>
@@ -280,7 +284,7 @@ export function MainNavigation({ isLightMode = false }: { isLightMode?: boolean 
                                 <ul className="flex flex-col gap-1.5">
                                     <li>
                                         <Link 
-                                            to={`/solutions#${uc.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            href={`/solutions#${uc.title.toLowerCase().replace(/\s+/g, '-')}`}
                                             onClick={() => setActiveDropdown(null)}
                                             className={`group flex items-center justify-between px-3 py-2 -ml-3 rounded-lg border transition-all duration-300 ${isLightMode ? 'border-transparent hover:bg-black/5 hover:border-black/5' : 'border-transparent hover:bg-white/[0.06] hover:border-white/10'}`}
                                         >
@@ -304,7 +308,7 @@ export function MainNavigation({ isLightMode = false }: { isLightMode?: boolean 
                             Everything you need to build momentum and drive performance.
                         </h3>
                         <div className="mt-4">
-                            <Link to="/resources" onClick={() => setActiveDropdown(null)} className="inline-flex items-center gap-2 text-[#19ad7d] text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity group">
+                            <Link href="/resources" onClick={() => setActiveDropdown(null)} className="inline-flex items-center gap-2 text-[#19ad7d] text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity group">
                                 View All Resources <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
                             </Link>
                         </div>
@@ -326,7 +330,7 @@ export function MainNavigation({ isLightMode = false }: { isLightMode?: boolean 
                                 <ul className="flex flex-col gap-1.5">
                                     <li>
                                         <Link 
-                                            to={`/resources#${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            href={`/resources#${item.title.toLowerCase().replace(/\s+/g, '-')}`}
                                             onClick={() => setActiveDropdown(null)}
                                             className={`group flex items-center justify-between px-3 py-2 -ml-3 rounded-lg border transition-all duration-300 ${isLightMode ? 'border-transparent hover:bg-black/5 hover:border-black/5' : 'border-transparent hover:bg-white/[0.06] hover:border-white/10'}`}
                                         >
@@ -388,7 +392,7 @@ export function MainNavigation({ isLightMode = false }: { isLightMode?: boolean 
                 >
                   <div className="flex items-center justify-between w-full py-6 group">
                     <Link 
-                      to={item.path}
+                      href={item.path}
                       onClick={() => setMobileMenuOpen(false)}
                       className="font-['Inter'] text-2xl font-medium text-white/90 tracking-[0.1em] uppercase hover:text-[#19ad7d] active:text-[#19ad7d] transition-colors flex-1"
                     >
@@ -427,7 +431,7 @@ export function MainNavigation({ isLightMode = false }: { isLightMode?: boolean 
                                 <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }}>
                                     <div className="text-white/30 uppercase tracking-[0.2em] text-[10px] font-bold mb-2">Overview</div>
                                     <p className="text-[15px] font-['Inter'] text-white/80 leading-snug mb-3">See how Enzy drives performance in real time.</p>
-                                    <Link to="/features" onClick={() => setMobileMenuOpen(false)} className="text-[#19ad7d] text-[11px] font-bold uppercase tracking-widest flex items-center gap-1.5">
+                                    <Link href="/features" onClick={() => setMobileMenuOpen(false)} className="text-[#19ad7d] text-[11px] font-bold uppercase tracking-widest flex items-center gap-1.5">
                                         View All Features <ArrowRight size={12} />
                                     </Link>
                                 </motion.div>
@@ -445,7 +449,7 @@ export function MainNavigation({ isLightMode = false }: { isLightMode?: boolean 
                                         {section.items.map((subitem, k) => (
                                             <Link 
                                                 key={k}
-                                                to={`/features#${subitem.toLowerCase().replace(/\s+/g, '-')}`}
+                                                href={`/features#${subitem.toLowerCase().replace(/\s+/g, '-')}`}
                                                 onClick={() => {
                                                     setMobileMenuOpen(false);
                                                     setActiveMobileDropdown(null);
@@ -467,7 +471,7 @@ export function MainNavigation({ isLightMode = false }: { isLightMode?: boolean 
                                 <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }}>
                                     <div className="text-white/30 uppercase tracking-[0.2em] text-[10px] font-bold mb-2">Overview</div>
                                     <p className="text-[15px] font-['Inter'] text-white/80 leading-snug mb-3">Built for the field. Engineered for growth.</p>
-                                    <Link to="/solutions" onClick={() => setMobileMenuOpen(false)} className="text-[#19ad7d] text-[11px] font-bold uppercase tracking-widest flex items-center gap-1.5">
+                                    <Link href="/solutions" onClick={() => setMobileMenuOpen(false)} className="text-[#19ad7d] text-[11px] font-bold uppercase tracking-widest flex items-center gap-1.5">
                                         Explore Use Cases <ArrowRight size={12} />
                                     </Link>
                                 </motion.div>
@@ -483,7 +487,7 @@ export function MainNavigation({ isLightMode = false }: { isLightMode?: boolean 
                                     <p className="text-[13px] text-white/50 mb-3 leading-snug">{uc.desc}</p>
                                     <div className="flex flex-col gap-2.5">
                                         <Link 
-                                            to={`/solutions#${uc.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            href={`/solutions#${uc.title.toLowerCase().replace(/\s+/g, '-')}`}
                                             onClick={() => {
                                                 setMobileMenuOpen(false);
                                                 setActiveMobileDropdown(null);
@@ -504,7 +508,7 @@ export function MainNavigation({ isLightMode = false }: { isLightMode?: boolean 
                                 <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }}>
                                     <div className="text-white/30 uppercase tracking-[0.2em] text-[10px] font-bold mb-2">Overview</div>
                                     <p className="text-[15px] font-['Inter'] text-white/80 leading-snug mb-3">Everything you need to build momentum and drive performance.</p>
-                                    <Link to="/resources" onClick={() => setMobileMenuOpen(false)} className="text-[#19ad7d] text-[11px] font-bold uppercase tracking-widest flex items-center gap-1.5">
+                                    <Link href="/resources" onClick={() => setMobileMenuOpen(false)} className="text-[#19ad7d] text-[11px] font-bold uppercase tracking-widest flex items-center gap-1.5">
                                         View All Resources <ArrowRight size={12} strokeWidth={2.5} />
                                     </Link>
                                 </motion.div>
@@ -520,7 +524,7 @@ export function MainNavigation({ isLightMode = false }: { isLightMode?: boolean 
                                     <p className="text-[13px] text-white/50 mb-3 leading-snug">{item.desc}</p>
                                     <div className="flex flex-col gap-2.5">
                                         <Link 
-                                            to={`/resources#${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            href={`/resources#${item.title.toLowerCase().replace(/\s+/g, '-')}`}
                                             onClick={() => {
                                                 setMobileMenuOpen(false);
                                                 setActiveMobileDropdown(null);

@@ -1,7 +1,9 @@
+ "use client";
+
 import React from "react";
 import { ArrowRight, BarChart2, Zap, Users, ShieldCheck, Trophy, Target } from "lucide-react";
 import { motion } from "motion/react";
-import { Link } from "react-router";
+import Link from "next/link";
 import { useTheme } from "./components/ThemeProvider";
 import { TestimonialsSection } from "./components/TestimonialsSection";
 
@@ -199,7 +201,7 @@ export function About() {
               Stop paying for software that slows you down. Let's talk about what Enzy can do for your numbers this quarter.
             </p>
             <Link 
-              to="/solutions"
+              href="/solutions"
               className={`relative z-10 flex items-center gap-3 px-8 py-4 rounded-full font-['Inter'] font-bold text-sm uppercase tracking-widest hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_0_32px_rgba(25,255,255,0.2)] ${isLightMode ? 'bg-black text-white' : 'bg-white text-black'}`}
             >
               Book a Strategy Call <ArrowRight size={18} />

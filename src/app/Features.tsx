@@ -1,7 +1,9 @@
+ "use client";
+
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
 import { Menu, X, Layers } from "lucide-react";
-import { useLocation } from "react-router";
+import { usePathname } from "next/navigation";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
 import { useTheme } from "./components/ThemeProvider";
 
@@ -225,13 +227,13 @@ const QuickJumpMenu = () => {
 }
 
 export function Features() {
-  const location = useLocation();
+  const pathname = usePathname();
   const { isLightMode } = useTheme();
 
   useEffect(() => {
-    if (location.hash) {
+    if (typeof window !== "undefined" && window.location.hash) {
       // Remove the '#' to get the id
-      const id = location.hash.replace('#', '');
+      const id = window.location.hash.replace('#', '');
       const element = document.getElementById(id);
       if (element) {
         // Small delay to ensure rendering is complete
@@ -240,7 +242,7 @@ export function Features() {
         }, 100);
       }
     }
-  }, [location.hash]);
+  }, [pathname]);
 
   return (
     <>

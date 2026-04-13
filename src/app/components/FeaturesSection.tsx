@@ -1,3 +1,5 @@
+ "use client";
+
 import React from "react";
 import { ArrowRight, Check } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
@@ -37,7 +39,7 @@ export function FeaturesSection() {
             <div className="relative w-full h-[calc(100%-2rem)] md:h-[calc(100%-3rem)] mt-auto ml-auto overflow-visible shadow-2xl rounded-tl-[16px]">
               <div className="absolute inset-0 rounded-tl-[16px] overflow-hidden border-t border-l border-white/20">
                 <img 
-                  src={imgAgenda} 
+                  src={imgAgenda.src} 
                   alt="Agenda Builder Interface" 
                   className="w-full h-full object-cover object-left-top" 
                 />
@@ -45,12 +47,12 @@ export function FeaturesSection() {
               
               {/* Overlays */}
               <img 
-                src={imgOverlay2} 
+                src={imgOverlay2.src} 
                 alt="Agenda holding overlay" 
                 className="absolute top-[40%] left-[10%] md:left-[25%] w-[140px] md:w-[185px] drop-shadow-2xl z-20" 
               />
               <img 
-                src={imgOverlay1} 
+                src={imgOverlay1.src} 
                 alt="Cursor overlay" 
                 className="absolute top-[35%] left-[50%] md:left-[55%] w-[80px] md:w-[100px] animate-bounce z-30 drop-shadow-lg" 
               />
@@ -92,7 +94,7 @@ export function FeaturesSection() {
             
             <div className="absolute top-[340px] md:top-[280px] left-8 md:left-10 w-[calc(100%-2rem)] md:w-[120%]">
               <img 
-                src={imgLeaderboardNew} 
+                src={imgLeaderboardNew.src} 
                 alt="Leaderboards Interface" 
                 className="w-full h-auto object-contain object-left-top" 
               />
@@ -112,7 +114,7 @@ export function FeaturesSection() {
             
             <div className="absolute top-[200px] md:top-[220px] left-8 md:left-10 w-[calc(100%-2rem)] md:w-[120%]">
               <img 
-                src={imgCard2} 
+                src={imgCard2.src} 
                 alt="Stage Kit" 
                 className="w-full h-auto object-contain object-left-top" 
               />
@@ -132,7 +134,7 @@ export function FeaturesSection() {
             
             <div className="absolute top-[200px] md:top-[220px] left-8 md:left-10 w-[calc(100%-2rem)] md:w-[120%]">
               <img 
-                src={imgCard3} 
+                src={imgCard3.src} 
                 alt="Green Room" 
                 className="w-full h-auto object-contain object-left-top" 
               />
