@@ -1,0 +1,12 @@
+declare module "figma:asset/*" {
+  const asset: {
+    src: string;
+    height: number;
+    width: number;
+    blurDataURL?: string;
+    blurWidth?: number;
+    blurHeight?: number;
+  };
+
+  export default asset;
+}
