@@ -4,5 +4,8 @@ out/
 dist/
 .DS_Store
 
+# Build artifacts
+*.tsbuildinfo
+
 # Cursor / local tooling
 .cursor/
