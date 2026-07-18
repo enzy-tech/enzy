@@ -5,6 +5,7 @@ import webpack from "next/dist/compiled/webpack/webpack-lib.js";
 const nextConfig = {
   // Static HTML/CSS/JS for hosts that upload a folder (same role as Vite’s `dist/`).
   output: "export",
+  trailingSlash: true,
   reactStrictMode: true,
   webpack: (config) => {
     // Allow imports like: import x from "figma:asset/<file>.png"
